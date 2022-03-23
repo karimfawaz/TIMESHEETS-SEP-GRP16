@@ -1,11 +1,13 @@
 CREATE TABLE Users(
-	UserId INT PRIMARY KEY,
+	UserId INT PRIMARY KEY NOT NULL,
 	FirstName VARCHAR(200),
 	LastName VARCHAR(200),
 	Email VARCHAR(100),
 	Username VARCHAR(200),
 	Password VARCHAR(200),
-	Department VARCHAR(12)
+	Department VARCHAR(12),
+	CONSTRAINT check_Department CHECK (Department IN ('Consultant','Line Manager','Finance'))
+
 );
 
 INSERT INTO Users VALUES (1,'Hashim','Umarji','hashim@gmail.com','Lethal','P455w0rd!','Consultant');
